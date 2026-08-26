@@ -1,0 +1,19 @@
+.sideBar{
+    display: flex;
+}
+
+.rightSide{
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+}
+
+.navBar{
+    height: 101px;
+
+}
+
+.main{
+    flex: 1;
+}

@@ -1,0 +1,29 @@
+
+
+.containerNav{
+    display: flex;
+    border: solid 1px #ccc;
+
+    height: 101px;
+
+    align-items: center;
+    justify-content: space-around;
+
+    border-left: none;
+}
+
+.info{
+    display: flex;
+    gap: 10px;
+}
+
+.info-enterprise{
+    font-size: 15px;
+}
+
+.image{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
