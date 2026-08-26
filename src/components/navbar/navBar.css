@@ -2,7 +2,8 @@
 
 .containerNav{
     display: flex;
-    border: solid 1px #ccc;
+    border: solid 1px #daeeff ;
+    background-color: #f0f8ff;
 
     height: 101px;
 
