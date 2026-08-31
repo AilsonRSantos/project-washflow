@@ -9,7 +9,7 @@
     flex-direction: column;
 
     width: 250px;
-    min-height: 100vh;
+    min-height: 100%;
 
     border: solid 1px #daeeff;
     background-color: #f0f8ff;

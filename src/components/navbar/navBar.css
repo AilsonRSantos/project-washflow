@@ -28,3 +28,10 @@
     gap: 30px;
     align-items: center;
 }
+
+.user{
+    background-color: #b4fcfc;
+    border: solid 1px #9bd4d4;
+    padding: 10px;
+    border-radius: 100%;
+}

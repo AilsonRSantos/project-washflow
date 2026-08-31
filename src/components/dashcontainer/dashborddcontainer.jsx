@@ -1,25 +1,29 @@
 import "./dashbord.css";
-
+import login from "../../date/login"
+import { useState } from "react";
 const DashbordContainer = () => {
+
+  
+
   return (
     <div className="dashbord">
       <div className="dashbord-cards">
         <div className="dashbord-card">
           <h2 className="card-tittle">Faturamento</h2>
-          <span className="card-value">R$ 8.540,00</span>
+          <span className="card-value"> R$ {login.faturamento},00 </span>
         </div>
         <div className="dashbord-card">
           <h2 className="card-tittle"> Clientes</h2>
-          <span className="card-value">120</span>
+          <span className="card-value">{login.clientes}</span>
         </div>
 
         <div className="dashbord-card">
           <h2 className="card-tittle"> Veículos</h2>
-          <span className="card-value">87</span>
+          <span className="card-value">{login.veiculos}</span>
         </div>
         <div className="dashbord-card">
           <h2 className="card-tittle">Serviços</h2>
-          <span className="card-value">245</span>
+          <span className="card-value">{login.serviços}</span>
         </div>
       </div>
 
@@ -29,7 +33,7 @@ const DashbordContainer = () => {
         </div>
 
         <div className="dashbord-pnel">
-          <h2 className="panel-tittle"> Serviços realizados mais realizados</h2>
+          <h2 className="panel-tittle"> Serviços mais realizados</h2>
           <div className="dashbord-pnel-content">
             <div className="pie-chart"> 
               <h2>circulo</h2>
@@ -45,7 +49,28 @@ const DashbordContainer = () => {
       </div>
 
       <div className="dashbord-activity">
-        <h2 className="pane-tittle">Atividades reentes</h2>
+        <div className="dashbord-activity-header">
+        <h2 className="pane-tittle">Atividades recentes</h2>
+        <h2 className="pane-link"> Ver Todos</h2>
+        </div>
+        <div className="dashbord-activity-recent-interactions">
+          
+          <div className="dashbord-activity-interactions">A
+
+          </div>
+          <div className="dashbord-activity-interactions">A
+
+          </div>
+          <div className="dashbord-activity-interactions">A
+
+          </div>
+          <div className="dashbord-activity-interactions">A
+
+          </div>
+          <div className="dashbord-activity-interactions">A
+
+          </div>
+        </div>
       </div>
     </div>
   );

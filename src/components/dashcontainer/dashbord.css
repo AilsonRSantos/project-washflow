@@ -90,3 +90,40 @@ height: 500px;
 .high-turnover-services p {
     font-size: 15px;
 }
+
+.dashbord-activity{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    
+    border-radius: 20px;
+
+    max-height: 500px;
+}
+
+.dashbord-activity-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.pane-link{
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.dashbord-activity-recent-interactions{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+    gap: 25px;
+    padding:  10px 10px 
+}
+
+.dashbord-activity-interactions {
+
+    border-radius: 10px;
+    padding: 15px;
+    border: solid 1px gray;
+}
