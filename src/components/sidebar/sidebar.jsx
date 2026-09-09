@@ -1,8 +1,11 @@
 import "./sidebar.css";
 import logo from "../../assets/logo.png";
 import Navigation from "../navbar/navBar";
+import { useState } from "react";
 
 const SideBar = () => {
+
+
   return (
     <div className="tela">
       <div className="containerSideBar">

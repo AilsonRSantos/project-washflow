@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 .dashbord{
     display: flex;
     flex-direction: column;
@@ -12,7 +16,9 @@
 }
 
 .dashbord-card{
+    display: flex;
     flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -112,6 +118,11 @@ height: 500px;
     font-size: 15px;
 }
 
+.dashbord-activity-header-interactions{
+    display: flex;
+    justify-content: space-around;
+}
+
 .dashbord-activity-recent-interactions{
     display: flex;
     justify-content: space-around;
@@ -122,6 +133,8 @@ height: 500px;
 }
 
 .dashbord-activity-interactions {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 
     border-radius: 10px;
     padding: 15px;

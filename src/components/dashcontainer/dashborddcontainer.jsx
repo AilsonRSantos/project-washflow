@@ -1,9 +1,8 @@
 import "./dashbord.css";
-import login from "../../date/login"
+import login from "../../date/login";
 import { useState } from "react";
 const DashbordContainer = () => {
-
-  
+  const dataRecente = login.atividades;
 
   return (
     <div className="dashbord">
@@ -35,41 +34,41 @@ const DashbordContainer = () => {
         <div className="dashbord-pnel">
           <h2 className="panel-tittle"> Serviços mais realizados</h2>
           <div className="dashbord-pnel-content">
-            <div className="pie-chart"> 
+            <div className="pie-chart">
               <h2>circulo</h2>
             </div>
-              <div className="high-turnover-services">
-                <p>serviço 1</p>
-                <p>serviço 2</p>
-                <p>serviço 3</p>
-                <p>serviço 4</p>
-              </div>
+            <div className="high-turnover-services">
+              <p>serviço 1</p>
+              <p>serviço 2</p>
+              <p>serviço 3</p>
+              <p>serviço 4</p>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="dashbord-activity">
         <div className="dashbord-activity-header">
-        <h2 className="pane-tittle">Atividades recentes</h2>
-        <h2 className="pane-link"> Ver Todos</h2>
+          <h2 className="pane-tittle">Atividades recentes</h2>
+          <h2 className="pane-link"> Ver Todos</h2>
         </div>
+
         <div className="dashbord-activity-recent-interactions">
-          
-          <div className="dashbord-activity-interactions">A
-
-          </div>
-          <div className="dashbord-activity-interactions">A
-
-          </div>
-          <div className="dashbord-activity-interactions">A
-
-          </div>
-          <div className="dashbord-activity-interactions">A
-
-          </div>
-          <div className="dashbord-activity-interactions">A
-
-          </div>
+          {dataRecente
+          .sort((a,b) => {
+            return new Date(b.data) - new Date(a.data)
+          })
+          .map((atividades) => { 
+            return (
+            <div className="dashbord-activity-interactions"
+            key={atividades.id}>
+              <span>{atividades.nomecliente}</span>
+              <span>{atividades.veiculo}</span>
+              <span>{atividades.serviços}</span>
+              <span>R${atividades.valor},00</span>
+              <span>{atividades.data}</span>
+            </div>
+          )})}
         </div>
       </div>
     </div>
