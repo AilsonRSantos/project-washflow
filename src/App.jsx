@@ -9,6 +9,8 @@ function App() {
     <>
       <div>
         <PageCliente/>
+        {/* <PageDashbord/> */}
+        {/* <PageLogin/> */}
       </div>
     </>
   );
