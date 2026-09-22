@@ -17,7 +17,9 @@ const login = {
                         serviços: "Polimento",
                         valor: 110,
                         data:"02-09-2026",
-                        telefone: "(27) 9999-9999"
+                        telefone: "(27) 9999-9999",
+                        cidade: "Vila Velha",
+                        ativo: true
                 },
                 {
                         id: 2,
@@ -27,7 +29,9 @@ const login = {
                         serviços: "Limpeza Vip",
                         valor: 150,
                         data:"03-09-2026",
-                        telefone: "(27) 9999-9999"
+                        telefone: "(27) 9999-9999",
+                        cidade: "Vila Velha",
+                        ativo: true
                 },
                 {
                         id: 3,
@@ -37,7 +41,9 @@ const login = {
                         serviços: "Limpeza Interna",
                         valor: 180,
                         data:"01-09-2026",
-                        telefone: "(27) 9999-9999"
+                        telefone: "(27) 9999-9999",
+                        cidade: "Vitoria",
+                        ativo: true
                 },
                 {
                         id: 4,
@@ -47,7 +53,9 @@ const login = {
                         serviços: "Polimento",
                         valor:110,
                         data:"04-09-2026",
-                        telefone: "(27) 9999-9999"
+                        telefone: "(27) 9999-9999",
+                        cidade: "Cariacica",
+                        ativo: true
                 }, 
                 {
                         id: 5,
@@ -57,7 +65,9 @@ const login = {
                         serviços: "Limpeza Simples",
                         valor: 130,
                         data:"06-09-2026",
-                        telefone: "(27) 9999-9999"
+                        telefone: "(27) 9999-9999",
+                        cidade: "Cariacica",
+                        ativo: true
                 }, 
                 
                 {
@@ -68,7 +78,9 @@ const login = {
                         serviços: "Matelinho de ouro",
                         valor: 700,
                         data:"06-09-2026",
-                        telefone: "(27) 9999-9999"
+                        telefone: "(27) 9999-9999",
+                        cidade: "Serra",
+                        ativo: true
                 },
 
         ]

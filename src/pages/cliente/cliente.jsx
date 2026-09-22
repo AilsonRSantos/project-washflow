@@ -2,37 +2,95 @@ import SideBar from "../../components/sidebar/sidebar";
 import Navigation from "../../components/navbar/navBar";
 import "./cliente.css";
 import login from "../../date/login";
-import { useState, useSyncExternalStore } from "react";
+import { useState } from "react";
 import { use } from "react";
 
 const listaClientes = login.atividades;
 
 const PageCliente = function () {
   const [mostrarCard, setMostrarCard] = useState(false);
-  const [valorcpf, setValorCpf] = useState("");
+
+  const [dadosFormulario, setDadosFormulario] = useState({
+    nomecliente: "",
+    cpf: "",
+    telefone: "",
+    cidade: "",
+    veiculo: "",
+  });
+  const fomularioInicial = {
+    nomecliente: "",
+    cpf: "",
+    telefone: "",
+    cidade: "",
+    veiculo: "",
+  };
+
+  const [campoVazio, setCampoVazio] = useState("");
   const [response, setResponse] = useState("none");
+
   const [inputValue, setInputValue] = useState("");
-  const [totalClientes, setTotalClientes] = useState(listaClientes.length);
+
   const [mostrarCardFiltro, setMostrarCardFiltro] = useState(false);
+  const [filtro, setFiltro] = useState({ cidade: "", periodo: "" });
+
+  const filtrarClientes = function (cidade, lista, input) {
+    let resultado = [];
+    resultado = lista.filter(
+      (e) =>
+        (cidade === "" || cidade === e.cidade) &&
+        (input === "" || e.nomecliente.toLocaleLowerCase().includes(input)),
+    );
+    return resultado;
+  };
 
   const buttonCliente = function button() {
-    if (mostrarCard === true) {
+    if (mostrarCard) {
       setMostrarCard(false);
+      setDadosFormulario(fomularioInicial);
     } else {
       setMostrarCard(true);
+      setDadosFormulario(fomularioInicial);
+      setResponse("none");
     }
   };
 
-  const buttonCadastro = function cadastro() {
-    if (!listaClientes.some((cliente) => cliente.cpf === valorcpf)) {
+  const buttonFiltro = function Cadastro() {
+    if (!mostrarCardFiltro) {
+      setMostrarCardFiltro(true);
+    } else {
+      setMostrarCardFiltro(false);
+    }
+  };
+
+  const cadastro = function cadastro(e) {
+    e.preventDefault();
+    const verificacao = listaClientes.some(
+      (cliente) => cliente.cpf === dadosFormulario.cpf,
+    );
+
+    if (!verificacao) {
+      let ultimoId = 1;
+      if (listaClientes.length !== 0) {
+        ultimoId = listaClientes.reduce((maiorID, idAtual) => {
+          if (maiorID < idAtual.id) {
+            maiorID = idAtual.id;
+          }
+          return maiorID;
+        }, 1);
+        ultimoId += 1;
+      }
+      const novoCliente = {
+        ...dadosFormulario,
+        id: ultimoId,
+      };
+
+      listaClientes.push(novoCliente);
+      setDadosFormulario(fomularioInicial);
       setResponse("sucesso");
-      // aqui eu crio o cliente novo//
-      setTimeout(() => {
-        setMostrarCard(false);
-        setResponse("none");
-      }, 3000);
+      setMostrarCard(false)
     } else {
       setResponse("falha");
+      console.log("teste");
     }
   };
 
@@ -51,40 +109,108 @@ const PageCliente = function () {
               </button>
 
               {mostrarCard && (
-                <div className="card-novo-cliente modal">
+                <div className="card-novo-cliente modal-cadastro">
                   <div>
                     <h1>Cadastro Cliente</h1>
                   </div>
-                  <div className="card-dados-clientes">
-                    <label htmlFor="name">Nome </label>
-                    <input type="text" id="name" name="name" />
-                    <label htmlFor="cpf"> CPF</label>
-                    <input
-                      type="text"
-                      name="cpf"
-                      id="cpf"
-                      value={valorcpf}
-                      onChange={(e) => setValorCpf(e.target.value)}
-                    />
-                    <label htmlFor="phone">Telefone</label>
-                    <input type="text" name="phone" id="phone" />
-                    <label htmlFor="cidade">Cidade</label>
-                    <input type="text" name="cidade" id="cidade" />
-                    <label htmlFor="veiculo">Veiculo</label>
-                    <input type="text" name="veiculo" id="veiculo" />
-                  </div>
-                  <div className="card-cliente-button">
-                    <div onClick={buttonCliente}>Cancelar</div>
-                    <div onClick={buttonCadastro}>Cadastrar</div>
-                  </div>
+                  <form onSubmit={cadastro}>
+                    <div className="card-dados-clientes">
+                      <label htmlFor="nome">Nome </label>
+                      <input
+                        type="text"
+                        id="nome"
+                        name="nomecliente"
+                        value={dadosFormulario.nomecliente}
+                        onChange={(e) =>
+                          setDadosFormulario({
+                            ...dadosFormulario,
+                            [e.target.name]: e.target.value,
+                          })
+                        }
+                        required
+                      />
+                      <label htmlFor="cpf"> CPF</label>
+                      <input
+                        type="text"
+                        name="cpf"
+                        id="cpf"
+                        value={dadosFormulario.cpf}
+                        onChange={(e) =>
+                          setDadosFormulario({
+                            ...dadosFormulario,
+                            [e.target.name]: e.target.value,
+                          })
+                        }
+                        minLength={11}
+                        required
+                      />
+                      <label htmlFor="telefone">Telefone</label>
+                      <input
+                        type="text"
+                        name="telefone"
+                        id="telefone"
+                        value={dadosFormulario.telefone}
+                        onChange={(e) =>
+                          setDadosFormulario({
+                            ...dadosFormulario,
+                            [e.target.name]: e.target.value,
+                          })
+                        }
+                        required
+                      />
+                      <label htmlFor="cidade">Cidade</label>
+                      <select
+                        name="cidade"
+                        id="cidade"
+                        className="inputCidade"
+                        value={dadosFormulario.cidade}
+                        onChange={(e) =>
+                          setDadosFormulario({
+                            ...dadosFormulario,
+                            [e.target.name]: e.target.value,
+                          })
+                        }
+                      >
+                        <option value="">--selecione a cidade--</option>
+                        <option value="Vitoria">Vitoria</option>
+                        <option value="Vila Velha">Vila Velha</option>
+                        <option value="Cariacica">Cariacica</option>
+                        <option value="Serra">Serra</option>
+                        <option value="Norte do Estado">Norte do Estado</option>
+                        <option value="Sul do Estado">Sul do Estado</option>
+                      </select>
+                      <label htmlFor="veiculo">Veiculo</label>
+                      <input
+                        type="text"
+                        name="veiculo"
+                        id="veiculo"
+                        value={dadosFormulario.veiculo}
+                        onChange={(e) =>
+                          setDadosFormulario({
+                            ...dadosFormulario,
+                            [e.target.name]: e.target.value,
+                          })
+                        }
+                      />
+                    </div>
+
+                    <div className="card-cliente-button">
+                      <button type="button" onClick={buttonCliente}>
+                        Cancelar
+                      </button>
+                      <button type="submit">Cadastrar</button>
+                    </div>
+                  </form>
                   <div className="response">
                     {response === "sucesso" && (
                       <span className="sucesso">
-                        Cadastro concluido com sucesso
+                        Cliente cadastrado com sucesso
                       </span>
                     )}
                     {response === "falha" && (
-                      <span className="falha">Cliente já cadastrado</span>
+                      <span className="falha">
+                        Falha!! este cliente já está cadastrado
+                      </span>
                     )}
                   </div>
                 </div>
@@ -94,7 +220,7 @@ const PageCliente = function () {
             <div className="clientes-Cards">
               <div className="cliente-card">
                 <div className="total-Clientes">
-                  <h2> Total de Clientes: {totalClientes} </h2>
+                  <h2> Total de Clientes: {listaClientes.length} </h2>
                 </div>
               </div>
 
@@ -122,32 +248,38 @@ const PageCliente = function () {
                     setInputValue(e.target.value.toLocaleLowerCase())
                   }
                 />
-                <button>Filtros</button>
+                <button className="ButtonFiltros" onClick={buttonFiltro}>
+                  Filtros
+                </button>
               </div>
+              {mostrarCardFiltro && (
+                <div className="container-card-Filtro modal-filtro">
+                  <div className="card-filtro-interno">
+                    <div className="Filtros">
+                      <label htmlFor="filtroCidade">Cidade</label>
+                      <select
+                        name="filtroCidades"
+                        id="filtroCidade"
+                        onChange={(e) => {
+                          setFiltro({
+                            ...filtro,
+                            cidade: e.target.value,
+                          });
+                        }}
+                      >
+                        <option value="">--Todas as Cidades--</option>
+                        <option value="Vitoria">Vitoria</option>
+                        <option value="Vila Velha">Vila Velha</option>
+                        <option value="Cariacica">Cariacica</option>
+                        <option value="Serra">Serra</option>
+                        <option value="Norte do Estado">Norte do Estado</option>
+                        <option value="Sultado do Estado">Sul do Estado</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
-
-            {/* <div className="container-card-Filtro">
-              <div className="card-filtro-interno">
-                <div className="Filtros">
-                  <h3>Cidade</h3>
-                  <ul>
-                    <li></li>
-                  </ul>
-                </div>
-                <div className="Filtros">
-                  <h3>Ultimos 30 dias</h3>
-                  <ul>
-                    <li></li>
-                  </ul>
-                </div>
-                <div className="Filtros">
-                  <h3>Ultimos 60 dias</h3>
-                </div>
-                <div className="Filtros">
-                  <h3>Ultimos 3 meses</h3>
-                </div>
-              </div>
-            </div> */}
 
             <div className="lista-Clientes">
               <div className="header-tabela-clientes">
@@ -156,35 +288,21 @@ const PageCliente = function () {
                 <h3>Veículo</h3>
                 <h3>Último atendimento</h3>
               </div>
-              {inputValue === ""
-                ? listaClientes.map((atividades) => {
-                    return (
-                      <div key={atividades.id}>
-                        <div className="lista-Clientes-ativos">
-                          <span>{atividades.nomecliente}</span>
-                          <span>{atividades.telefone}</span>
-                          <span>{atividades.veiculo}</span>
-                          <span>{atividades.serviços}</span>
-                        </div>
+
+              {filtrarClientes(filtro.cidade, listaClientes, inputValue).map(
+                (e) => {
+                  return (
+                    <div key={e.id}>
+                      <div className="lista-Clientes-ativos">
+                        <span>{e.nomecliente}</span>
+                        <span>{e.telefone}</span>
+                        <span>{e.veiculo}</span>
+                        <span>{e.serviços}</span>
                       </div>
-                    );
-                  })
-                : listaClientes
-                    .filter((i) =>
-                      i.nomecliente.toLocaleLowerCase().includes(inputValue),
-                    )
-                    .map((atividades) => {
-                      return (
-                        <div key={atividades.id}>
-                          <div className="lista-Clientes-ativos">
-                            <span>{atividades.nomecliente}</span>
-                            <span>{atividades.telefone}</span>
-                            <span>{atividades.veiculo}</span>
-                            <span>{atividades.serviços}</span>
-                          </div>
-                        </div>
-                      );
-                    })}
+                    </div>
+                  );
+                },
+              )}
             </div>
           </div>
         </div>
@@ -192,5 +310,4 @@ const PageCliente = function () {
     </>
   );
 };
-
 export default PageCliente;
