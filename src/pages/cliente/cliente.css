@@ -7,41 +7,34 @@
 .rightSide-Cliente{
     display: flex;
     flex-direction: column;
-    
-    width: 100%;
+    flex: 1;
 }
 
-.navBar-liente{
+.navBar-cliente{
     height: 101px;
-
 }
 
 .main-Cliente{
     display: flex;
     flex-direction: column;
     flex: 1;
-
-    gap: 75px;
+    background-color:  #f0f8ff;
 }
 .card-main-novo-cliente{
-display: flex;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .novo-Cliente{
     background-color: #b4fcfc;
     border: 1px solid #9bd4d4;
     border-radius: 20px;
-
-    max-width: 200px;
-    max-height: 78px;
+    padding: 25px 25px;
     cursor: pointer;
-
-    margin: 50px;
-    padding: 30px;
     font-size: 15px;
-
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   transition: all 0.2s ease;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: all 0.2s ease;
 }
 
 .novo-Cliente:hover{
@@ -49,22 +42,20 @@ display: flex;
 
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    
 }
 
 .card-novo-cliente{
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
     justify-content: space-around;
-    margin: 10px;
+
     background-color: #f0f8ff;
-    height: 500px;
-    width: 450px;
-    padding: 30px;
+    height: 800px;
+    width: 800px;
 
     border-radius: 20px;
-
     box-shadow: 7px 5px 5px #b1b3b4;
 }
 
@@ -72,34 +63,72 @@ display: flex;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    
     align-items: center;
 }
 .card-dados-clientes input {
-    width: 350px;
+    min-width: 600px;
 }
 
 .card-cliente-button{
     display: flex;
     gap: 30px;
-    padding-top: 10px;
-
     cursor: pointer;
+    padding-top: 50px;
+}
 
+.card-cliente-button button{
+    background-color: #b4fcfc;
+    border: 1px solid #9bd4d4;
+    border-radius: 8px;
+    font-size: 15px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.card-cliente-button button:hover{
+    background-color: #00ffff;
+
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .clientes-Cards{
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
-    gap: 200px;
+    align-items: center;
+    gap: 30px;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 20px;
+}
+.card-indicadores{
+    display: flex;
+    gap: 25px;
 }
 
 .cliente-card{
+    background-color: #777;
     display: flex;
     align-items: center;
-    background-color: aliceblue;
-    padding: 50px;
-    margin-left: 100px;
-    border-radius: 20px;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 200px;
+    width: 250px;
+    border-radius: 30px;
+    background-color: #d3dff3;
+    border: solid 1px #daeeff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.cliente-card h2{
+    font-size: 15px;
+    color: #929292;
+    padding: 10px;
+}
+.cliente-card-valor{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
 }
 
 .response{
@@ -116,29 +145,43 @@ display: flex;
 .modal-cadastro{
     position: fixed;
     inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .modal-filtro{
     position: absolute;
     z-index: 100;
 }
 
-.browser-Cliente{
-    display: flex;
-    flex-direction: column;
-
-    margin-left: 50px;
-
-    position: relative;
+.content-Browser{
+    box-sizing: border-box;
+    margin: 15px;
+    border-radius: 15px;
+    background-color: #d3dff3;
+    border: 1px solid #9bd4d4;
+}
+.content-intern-browser{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px;
 }
 
+.browser-Cliente{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
 
 .browser-Cliente input{
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     height: 50px;
 
-
     border-color: #9bd4d4;
-
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -160,7 +203,6 @@ display: flex;
 .container-card-Filtro {
     position: absolute;
     top: 80px;
-    left: 450x;
 
     margin-top: 8px;
     width: 180px;
@@ -204,30 +246,141 @@ display: flex;
 
 
 .lista-Clientes{
-    min-width: 100vw;
-    margin-left: 25px;
-    
-    background-color: #d4d6d6;
-    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.card-lista-clientes-end{
+    background-color: #fff;
+    height: 50px;
+    border-top: solid 1px #92929227;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .header-tabela-clientes{
     display: grid;
     grid-template-columns: 2fr 2fr 2fr 2fr;
     align-items: center;
+    background-color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
 }
 
 .lista-Clientes-ativos{
     display: grid;
     grid-template-columns: 2fr 2fr 2fr 2fr;
     align-items: center;
+    cursor: pointer;
+
+    transition: transform 0.35s ease-out;
 }
+.lista-Clientes-ativos:hover{  
+    transform: translateY(-4px);
+}
+
 
 .lista-Clientes-ativos span{
     display: flex;
     align-items: center;
-    margin-top: 10px;
-    padding-left: 10px;
+    padding: 25px 0 25px 10px;
+    border-top: solid 1px #92929227;
     background-color: #fff;
     height: 30px;
+}
+
+.card-cliente-selecionado {
+    flex: 1;
+}
+.modal-cliente-selecionado{
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-cliente-selecionado { 
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 18px;
+    padding: 22px; 
+    display: flex;
+    flex-direction: column; 
+    max-width: 700px;
+    gap: 20px; 
+}
+
+.card-topo-cliente { 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.card-identidade-cliente { 
+    display: flex;
+    gap: 14px; 
+    align-items: 
+    center; 
+}
+
+.card-avatar-cliente { 
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #b4fcfc;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 18px; 
+}
+
+.card-topo-cliente h2 { 
+    margin: 0;
+    font-size: 18px; 
+}
+
+.card-topo-cliente span { 
+    font-size: 12px;
+    color: #777; 
+}
+
+.acoes-cliente { 
+    display: flex;
+    gap: 8px; 
+}
+
+.acoes-cliente button { 
+    border: 1px solid #ddd;
+    background: transparent; 
+    border-radius: 9px; 
+    padding: 8px 11px;
+    cursor: pointer; 
+}
+
+.card-dados-cliente { 
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 50px; 
+    padding: 20px;
+    border: solid 1px rgba(0, 0, 0, 0.158);
+    border-radius: 8px;
+}
+
+.inputCidade {
+    max-width: 220px;
+}
+.card-cliente-selecionado form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.buttonSaveEdit{
+    max-width: 70px;
+    cursor: pointer;
+    background-color: #b4fcfc;
+    border: 1px solid #9bd4d4;
 }

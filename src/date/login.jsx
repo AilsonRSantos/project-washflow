@@ -16,7 +16,7 @@ const login = {
                         veiculo: "Classic",
                         serviços: "Polimento",
                         valor: 110,
-                        data:"02-09-2026",
+                        data:"2026-09-02",
                         telefone: "(27) 9999-9999",
                         cidade: "Vila Velha",
                         ativo: true
@@ -28,7 +28,7 @@ const login = {
                         veiculo: "Gol G5",
                         serviços: "Limpeza Vip",
                         valor: 150,
-                        data:"03-09-2026",
+                        data:"2026-09-03",
                         telefone: "(27) 9999-9999",
                         cidade: "Vila Velha",
                         ativo: true
@@ -40,7 +40,7 @@ const login = {
                         veiculo: "Corrola 2015",
                         serviços: "Limpeza Interna",
                         valor: 180,
-                        data:"01-09-2026",
+                        data:"2026-09-03",
                         telefone: "(27) 9999-9999",
                         cidade: "Vitoria",
                         ativo: true
@@ -52,7 +52,7 @@ const login = {
                         veiculo: "Honda Civic",
                         serviços: "Polimento",
                         valor:110,
-                        data:"04-09-2026",
+                        data:"2026-09-04",
                         telefone: "(27) 9999-9999",
                         cidade: "Cariacica",
                         ativo: true
@@ -64,7 +64,7 @@ const login = {
                         veiculo: "Corsa",
                         serviços: "Limpeza Simples",
                         valor: 130,
-                        data:"06-09-2026",
+                        data:"2026-09-06",
                         telefone: "(27) 9999-9999",
                         cidade: "Cariacica",
                         ativo: true
@@ -77,7 +77,7 @@ const login = {
                         veiculo: "Civic",
                         serviços: "Matelinho de ouro",
                         valor: 700,
-                        data:"06-09-2026",
+                        data:"2026-09-06",
                         telefone: "(27) 9999-9999",
                         cidade: "Serra",
                         ativo: true
