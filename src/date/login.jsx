@@ -83,6 +83,15 @@ const login = {
                         ativo: true
                 },
 
+        ],
+
+        servicos: [
+                {
+                        nomeServico: "",
+                        precoServico: "",
+                        DescricaoServico: "",
+                        tempoEstimadoServico: ""
+                },
         ]
    
 }

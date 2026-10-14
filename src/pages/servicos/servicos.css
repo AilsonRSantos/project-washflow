@@ -1,0 +1,65 @@
+.mainPage{
+    display: flex;
+    min-height: 100vh;
+}
+
+.rightSide{
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+}
+
+.navBar{
+    width: 100%;
+}
+
+.servicos-content{
+    flex: 1;
+}
+
+.servicos-header {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.button-Novo-Servico{
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* modal de cadastro */
+.card-Cadastro-Servico{
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header-Cadastro-Servico{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.titulo-and-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-Cadastro-servico{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.price-servico{
+    display: flex;
+    gap: 20px;
+}
