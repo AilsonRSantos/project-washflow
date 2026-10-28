@@ -1,0 +1,96 @@
+
+
+.card-Cadastro-Servico{
+    top: 250px;
+    left: 800px;
+
+    position: fixed;
+    width: 700px;
+    height: 600px;
+    background-color: #f0f8ff;
+    border: 1px solid #daeeff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    gap: 32px;
+}
+
+.header-Cadastro-Servico {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.header-Cadastro-Servico p {
+    font-size: 0.87rem;
+    color: #46a6fa;
+}
+
+.titulo-and-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+.conteinerButton {
+    position: absolute;
+    right: 16px;
+    top: 10px;
+}
+
+.conteinerButton button{
+    color: #9c9c9c;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 40%;
+    border: solid 2px #e2e2e2;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.conteinerButton:hover button {
+ background-color: #e2e2e2;
+ color: #333;
+}
+
+/* formulario cadastro */
+
+.form-Cadastro-servico{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 70%;
+}
+
+
+.price-servico{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+
+.form-Cadastro-servico button {
+    max-width: 100px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.EstiloConteinerInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.EstiloConteinerInfo input,
+.EstiloConteinerInfo textarea {
+    width: 100%;
+    box-sizing: border-box;
+}

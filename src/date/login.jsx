@@ -1,99 +1,98 @@
 const login = {
-        email: "ailsonficticio@gmail.com.br",
-        senha: "senha12345",
-        nome: "Ailson Rosa",
-        razaoSocial: "Washflow",
-        faturamento: 8540,
-        clientes: 120,
-        veiculos: 87,
-        serviços: 152,
+  email: "ailsonficticio@gmail.com.br",
+  senha: "senha12345",
+  nome: "Ailson Rosa",
+  razaoSocial: "Washflow",
+  faturamento: 8540,
+  clientes: 120,
+  veiculos: 87,
+  serviços: 152,
 
-        atividades:  [
-                {
-                        id: 1,
-                        nomecliente: "Maurício",
-                        cpf: "18366505740",
-                        veiculo: "Classic",
-                        serviços: "Polimento",
-                        valor: 110,
-                        data:"2026-09-02",
-                        telefone: "(27) 9999-9999",
-                        cidade: "Vila Velha",
-                        ativo: true
-                },
-                {
-                        id: 2,
-                        nomecliente: "Marcos Jr",
-                        cpf: "18366505741",
-                        veiculo: "Gol G5",
-                        serviços: "Limpeza Vip",
-                        valor: 150,
-                        data:"2026-09-03",
-                        telefone: "(27) 9999-9999",
-                        cidade: "Vila Velha",
-                        ativo: true
-                },
-                {
-                        id: 3,
-                        nomecliente: "Lucio",
-                        cpf: "18366505742",
-                        veiculo: "Corrola 2015",
-                        serviços: "Limpeza Interna",
-                        valor: 180,
-                        data:"2026-09-03",
-                        telefone: "(27) 9999-9999",
-                        cidade: "Vitoria",
-                        ativo: true
-                },
-                {
-                        id: 4,
-                        nomecliente: "João",
-                        cpf: "18366505743",
-                        veiculo: "Honda Civic",
-                        serviços: "Polimento",
-                        valor:110,
-                        data:"2026-09-04",
-                        telefone: "(27) 9999-9999",
-                        cidade: "Cariacica",
-                        ativo: true
-                }, 
-                {
-                        id: 5,
-                        nomecliente: "Leandro",
-                        cpf: "18366505744",
-                        veiculo: "Corsa",
-                        serviços: "Limpeza Simples",
-                        valor: 130,
-                        data:"2026-09-06",
-                        telefone: "(27) 9999-9999",
-                        cidade: "Cariacica",
-                        ativo: true
-                }, 
-                
-                {
-                        id: 6,
-                        nomecliente: "Sergio",
-                        cpf: "18366505764",
-                        veiculo: "Civic",
-                        serviços: "Matelinho de ouro",
-                        valor: 700,
-                        data:"2026-09-06",
-                        telefone: "(27) 9999-9999",
-                        cidade: "Serra",
-                        ativo: true
-                },
+  atividades: [
+    {
+      id: 1,
+      nomecliente: "Maurício",
+      cpf: "18366505740",
+      veiculo: "Classic",
+      serviços: "Polimento",
+      valor: 110,
+      data: "2026-09-02",
+      telefone: "(27) 9999-9999",
+      cidade: "Vila Velha",
+      ativo: true,
+    },
+    {
+      id: 2,
+      nomecliente: "Marcos Jr",
+      cpf: "18366505741",
+      veiculo: "Gol G5",
+      serviços: "Limpeza Vip",
+      valor: 150,
+      data: "2026-09-03",
+      telefone: "(27) 9999-9999",
+      cidade: "Vila Velha",
+      ativo: true,
+    },
+    {
+      id: 3,
+      nomecliente: "Lucio",
+      cpf: "18366505742",
+      veiculo: "Corrola 2015",
+      serviços: "Limpeza Interna",
+      valor: 180,
+      data: "2026-09-03",
+      telefone: "(27) 9999-9999",
+      cidade: "Vitoria",
+      ativo: true,
+    },
+    {
+      id: 4,
+      nomecliente: "João",
+      cpf: "18366505743",
+      veiculo: "Honda Civic",
+      serviços: "Polimento",
+      valor: 110,
+      data: "2026-09-04",
+      telefone: "(27) 9999-9999",
+      cidade: "Cariacica",
+      ativo: true,
+    },
+    {
+      id: 5,
+      nomecliente: "Leandro",
+      cpf: "18366505744",
+      veiculo: "Corsa",
+      serviços: "Limpeza Simples",
+      valor: 130,
+      data: "2026-09-06",
+      telefone: "(27) 9999-9999",
+      cidade: "Cariacica",
+      ativo: true,
+    },
 
-        ],
+    {
+      id: 6,
+      nomecliente: "Sergio",
+      cpf: "18366505764",
+      veiculo: "Civic",
+      serviços: "Matelinho de ouro",
+      valor: 700,
+      data: "2026-09-06",
+      telefone: "(27) 9999-9999",
+      cidade: "Serra",
+      ativo: true,
+    },
+  ],
 
-        servicos: [
-                {
-                        nomeServico: "",
-                        precoServico: "",
-                        DescricaoServico: "",
-                        tempoEstimadoServico: ""
-                },
-        ]
-   
-}
+  servicos: [
+    {
+      id: 1,  
+      nomeServico: "Polimento",
+      precoServico: "180",
+      descricaoServico: "teste",
+      tempoEstimadoServico: "2h",
+    },
+  ],
+};
 
-export default login
+export default login;
